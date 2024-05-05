@@ -1,8 +1,16 @@
-import React from 'react'
 
-export default function Guitar({guitar, addToCart}) {
+type Guitar = {
+    id: number
+    name: string
+    image: string
+    description: string 
+    price: number
+}
 
-    const {id , name, description, image, price} = guitar
+export default function Guitar({guitar, addToCart} : {guitar: Guitar, addToCart: (item: Guitar) => void }) {
+
+    const {name, description, image, price} = guitar
+
 
 
     return (
