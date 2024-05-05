@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
-import React, { useMemo } from 'react'
+import { useEffect, useState, useMemo } from "react"
+import type { CartItem } from "../types"
 import { db } from "../data/db"
 
-export const useCart = () => {
+export const useCart = (): CartItem[] => {
     const initialCart = () => {
         const localStorageCart = localStorage.getItem('cart')
         return localStorageCart ? JSON.parse(localStorageCart) : []
